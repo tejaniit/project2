@@ -55,7 +55,7 @@ Chatbucket.config(function($routeProvider){
 	.when("/allblogs",
 			{
 		templateUrl:"views/allblogs.html",
-		controller:"allblogsController"
+		controller:"BlogCommentController"
 		
 	})
 	.when("/register",
@@ -1040,7 +1040,7 @@ Chatbucket.controller("chatController",function($scope,$http,ChatService,$rootSc
 								likes:$scope.likes
 									}
 								console.log("data in like:"+like);
-								console.log("postedby:"+$rootScope.uname);
+								console.log("postedby:"+$rootScope.title);
 								 $http.put('http://localhost:2020/Chatbucket/updateBlog',like);
 								 $http.get("http://localhost:2020/Chatbucket/viewBlogs")
 								    .then(function (response) {
@@ -1077,10 +1077,10 @@ Chatbucket.controller("chatController",function($scope,$http,ChatService,$rootSc
 							var comment=
 								{
 									blogid:$scope.commentblog.blog_id,
-									name:$rootScope.uname,
-									comment:$scope.commentblog.Comment
+									name:$rootScope.title,
+									comment:$scope.commentblog.blog_comment
 								};
-							$http.post('http://localhost:2020/Chatbucket/addComment',comment);
+							$http.post('',comment);
 							 $http.get("http://localhost:2020/Chatbucket/viewBlogs")
 							    .then(function (response) {
 							    	

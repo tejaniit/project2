@@ -65,7 +65,7 @@ color: #CF7691;
 						data-toggle="modal" data-target="#likeblog"
 						ng-click="likeBlog(allblogs)">Like</button></td>
 				 
-			<td><input type="text"  ng-model="allblogs.Comment"></td>
+			<td><input type="text"  ng-model="allblogs.Comment" name="comment"></td>
 			<td><button type="button" class="btn btn-primary btn-sm " ng-click="comment(allblogs)">comment</button></td></tr>
 			
 			
@@ -97,8 +97,8 @@ color: #CF7691;
 		<tbody>
 		
 			<tr ng-repeat="comment in comments">
-				<td>{{comment.name}}</td>
-				<td>{{comment.comment}}</td>
+				<td>{{comment.title}}</td>
+				<td>{{comment.blog_Comment}}</td>
 				
 				
 			
