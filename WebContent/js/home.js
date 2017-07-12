@@ -55,7 +55,7 @@ Chatbucket.config(function($routeProvider){
 	.when("/allblogs",
 			{
 		templateUrl:"views/allblogs.html",
-		controller:"BlogCommentController"
+		controller:"allblogsController"
 		
 	})
 	.when("/register",
