@@ -1057,6 +1057,7 @@ Chatbucket.controller("chatController",function($scope,$http,ChatService,$rootSc
 								 console.log("in viewcomments fn");
 								 $scope.viewcomments=allblogs;
 								 console.log("blogid:"+$scope.viewcomments.blog_id);
+								 console.log("blog_Comment:"+$scope.viewcomments.comment);
 					 $http.get("http://localhost:2020/Chatbucket/viewComments/"+$scope.viewcomments.blog_id)
 								    .then(function (response) {
 								    	
