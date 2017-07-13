@@ -1074,13 +1074,14 @@ Chatbucket.controller("chatController",function($scope,$http,ChatService,$rootSc
 							
 							$scope.commentblog=allblogs;
 							console.log("comment is"+$scope.commentblog.Comment);
+							console.log("blog title:::::"+$scope.commentblog.title);
 							var comment=
 								{
 									blogid:$scope.commentblog.blog_id,
-									name:$rootScope.title,
-									comment:$scope.commentblog.blog_comment
+									name:$scope.commentblog.title,
+									blog_comment:$scope.commentblog.Comment
 								};
-							$http.post('',comment);
+							$http.post('http://localhost:2020/Chatbucket/addComment',comment);
 							 $http.get("http://localhost:2020/Chatbucket/viewBlogs")
 							    .then(function (response) {
 							    	
