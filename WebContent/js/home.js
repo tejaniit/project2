@@ -1012,7 +1012,7 @@ Chatbucket.controller("chatController",function($scope,$http,ChatService,$rootSc
 					$rootScope.logout=true;
 					
 					
-					console.log("username in allblog controller:"+$rootScope.uname);
+					console.log("username in allblog controller:"+$rootScope.title);
 							 $http.get("http://localhost:2020/Chatbucket/viewAllBlogs")
 							    .then(function (response) {
 							    	
